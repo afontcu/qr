@@ -1,7 +1,285 @@
 <!DOCTYPE html>
-<html>
+<html lang="ca">
 <head>
-<meta http-equiv="refresh" content="0;url=https://docs.google.com/document/d/1m8zsiTYH6eLYAg5yb2-FSERDox2vOLky6LPCU2_zCEc/preview">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>CA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: #0a0a0a;
+    color: #d4d4d4;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .hero {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+    text-align: center;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  .hero h1 {
+    font-family: 'Space Mono', monospace;
+    color: #4ade80;
+    font-size: 2rem;
+    margin-top: 24px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+  }
+
+  .tracklist {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 30px 20px 80px;
+  }
+
+  .track {
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .track-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .track-header:hover,
+  .track-header:focus-visible {
+    color: #4ade80;
+    outline: none;
+  }
+
+  .track-header.active {
+    color: #4ade80;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #0a0a0a;
+    z-index: 10;
+    padding: 16px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+
+  .track-number {
+    font-family: 'Space Mono', monospace;
+    color: #525252;
+    font-size: 0.8rem;
+    min-width: 28px;
+    flex-shrink: 0;
+  }
+
+  .track-title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 12px;
+    min-width: 0;
+  }
+
+  .track-arrow {
+    font-size: 0.7rem;
+    color: #525252;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .track-header.active .track-arrow {
+    transform: rotate(180deg);
+    color: #4ade80;
+  }
+
+  .lyrics {
+    display: none;
+    padding: 0 0 0 28px;
+  }
+
+  .lyrics.open {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  .lyrics p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.9;
+    color: #a3a3a3;
+    white-space: pre-line;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #333;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .hero { padding: 60px 20px 30px; }
+    .tracklist { padding: 40px 20px 100px; }
+  }
+</style>
 </head>
-<body>Redirecting...</body>
+<body>
+
+<div class="hero">
+  <img src="cover.png" alt="CA — Portada del disc">
+  <h1>CA</h1>
+</div>
+
+<div class="tracklist" id="tracklist">
+</div>
+
+<footer>CA &mdash; Amics i Vi</footer>
+
+<script>
+const songs = [
+  {
+    title: "Himne CA",
+    lyrics: `Glòria! GLÒRIA AL CA!\nOooooooh!\nOooooooh!\n\nNascuts entre litres i males decisions,\nfesta major: samarretes horteres i cervells plens d’alcohol.\nCorrecasses èpiques, vomitant tradicions,\ngastronomia dubtosa… i moral destruïda.\n\nAl local del Ramu, temple de decadència,\nfumant com xemeneies i perdent la consciència,\nel Risk era guerra, però la guerra real\nera aixecar-se dret amb una ressaca terminal.\n\nSant Sebastià, pujada infernal,\narribant més morts que vius — ritual municipal,\nsi algú recorda com baixar…\nprobablement no era del CA.\n\nAMICS I VI! — AMUNT EL NOSTRE CRIT!\nENS IMPORTA UNA MERDA L’ENDEMÀ AL MATÍ!\nAMICS I VI! — ORGULL I DELIRI!\nSOM UNA BOMBA ETÍLICA SENSE CAP CRITERI!\n\nBilbao tremola quan arribem,\nSemana Grande convertida en infern,\ncantem malament, però cridem millor,\ni al matí, pets que et maten de la fetor.\n\nMalta… episodi gairebé criminal,\nla policia pensant: «aquests són un problema real»,\nrobatori? Confusió? Ningú ho sabrà mai,\nperò quasi no tornem… o ens quedem a la presó, company.\n\nPiscines destruïdes, ventiladors assassinats,\npropietaris plorant, contractes ignorats,\n«tranquils, no passa res» — frase mítica,\nmentre el lavabo era zona crítica.\n\nAMICS I VI! — AMUNT EL NOSTRE CRIT!\nENS IMPORTA UNA MERDA L’ENDEMÀ AL MATÍ!\nAMICS I VI! — ORGULL I DELIRI!\nSOM UNA BOMBA ETÍLICA SENSE CAP CRITERI!\n\nAra som adults… però només de façana,\namb ressaca crònica i ànima pagana,\nCopeta fina, vanitat indecent,\nperò al segon glop ja som els de sempre: inconscients.\n\nHipoteques, feina, responsabilitat,\ntot això desapareix amb el tercer got,\nequilibri perfecte entre boomer i desgraciat,\namb l’esperit jove… i el fetge en un clot.\n\nUn brindis pels errors!\nUn brindis pels records borrats!\nUn brindis per no aprendre mai res!\n\nAMICS I VI! — FINS A LA FI!\nSI CAIEM, CAIEM JUNTS AQUÍ!\nAMICS I VI! — GLÒRIA ETERNA!\nCA NO MOR, SEMPRE GOVERNA A LA TAVERNA!\n\nL’última tradició absurda: sopar de Nadal — escenari grotesc,\nbrindis entre rialles i discursos en excés,\ni quan ja ho hem posat tot en comú,\narriba el moment més fill de puta del menú.\n\nJudici sumaríssim, tribunal d’alcohòlics,\ncriteris inventats, arguments diabòlics.\n«No apareix mai», «no diu mai res»,\ndoncs cap a fora — que el grup no és un refugi per interès.\n\nExpulsions a dit, democràcia espantosa,\napunyalant absents amb rialla nerviosa,\nuna tradició tan fosca com gloriosa,\non la coherència mor i la demència reposa.\n\nPerò el proper Nadal... algú tornarà a caure!\nVISCA EL CA, AMICS!`
+  },
+  {
+    title: "Martí",
+    lyrics: `Escolteu un moment aquesta història tan curiosa,\nla d’un nen amb una ambició poderosa.\nAltres volien ser metges, astronautes o artistes,\nperò ell només volia… diners a les butxaques i comptes optimistes.\n\nDe petit ja tenia un objectiu molt concret,\nvolia una fortuna que el fes sentir complet.\nMentre els seus pares parlaven d’ideals i revolució,\nell pensava en dividends, interessos i inversió.\n\nEls pares, molt d’esquerres, ideals fins al final,\nhaurien volgut un fill més poètic, més social.\nPerò el nen mirava el món amb brillantor als ulls:\n«Aquí hi ha pasta», pensava. «I jo en vull.»\n\nNo sabia encara el camí ni la direcció,\nperò tenia claríssim l’objectiu i la missió:\npotser no sabia el «com», ni tampoc el «per què»,\nperò sí el resultat final: riquesa, i abundància també.\n\nMartí Avió, emperador dels bitllets!\nCol·leccionista de luxes i rellotges perfectes!\nCotxes potents i de marques selectes,\nque sonin bé i no tinguin defectes.\n\nSomni senzill, directe i explosiu:\nser immensament ric.\nRidículament ric.\n\nAmb els anys el pla semblava anar prenent forma,\ntot el que feia seguia la mateixa norma.\nEls estudis, les idees, fins i tot l’afició,\nsemblaven apuntar cap a la mateixa direcció.\n\nPerò pel camí li va néixer una obsessió curiosa:\nels avions, aquella màquina meravellosa.\nSabia models, motors i rutes aèries sense error,\npensar en tot això li feia agafar calor.\n\nVa pensar fins i tot entrar a l’exèrcit un dia,\npilotant avions amb heroica valentia.\nPerò la idea va marxar tan ràpid com va venir,\nperquè comptar diners semblava molt millor destí.\n\nAixí que l’aviació va quedar com a passió,\nuna frikada elegant per la seva col·lecció.\nPerò el somni original seguia viu i vigent:\nser ric, molt ric, absurdament ric, de manera recurrent.\n\nMartí Avió, magnat dels bitllets!\nAmb rellotges brillants i cotxes poc discrets!\nAmb mansions que miren la ciutat des de dalt,\nperquè Caldes de Montbui li quedava massa rural.\n\nSomni senzill, directe i explosiu:\nser immensament ric.\nEscandalosament ric.\n\nI quan va arribar el moment de trobar companyia,\nel destí — o potser l’estratègia — va fer la seva via.\nEntre romanticisme, somriures i passió,\ntambé hi havia una cartera amb bona reputació.\n\nPerquè l’amor és bonic, això ningú ho nega,\nperò si ve amb comptes plens… la història és més alegre.\n\nI ara el Martí mira enrere amb satisfacció total:\ncotxe car, rellotges cars, estil internacional.\nCasa a la part alta de Barcelona ciutat,\namb vistes, prestigi i aire refinat.\n\nI per si això no fos prou celebració:\nsegona residència per completar la col·lecció.\n\nSomni senzill, directe i explosiu:\nser immensament ric.\nI francament… gairebé ho ha aconseguit.\n\nAixí acaba la història que avui hem cantat:\nd’un nen ambiciós que el seu somni ha perseguit sense parar.\nPotser no és rei, ni duc, ni emperador clàssic,\nperò una cosa està clara:\nEl Martí…\nvolia ser ric.`
+  },
+  {
+    title: "Gemma",
+    lyrics: `En un grup d’amics dominat per mascles…\nOn el crit més intel·ligent és: «Passa la cervesa!»\nOn una festa pot acabar amb una cadira trencada…\no amb un incendi forestal…\nNomés queda una esperança.\n\nLa Gemma.\n\nEnmig d’aquest safari de testosterona i crits\non el seny desapareix després de quatre glops seguits,\nquan sembla que la civilització ja ha dit adéu,\napareix la Gemma corrent perquè arriba tard a un assaig seu.\n\nDe dia dibuixa cases amb precisió d’arquitecta,\nde nit memoritza textos amb passió d’actriu perfecta.\nI quan sembla que per fi pot descansar tranquil·lament,\npotser la veus jugant a rugby touch, dient: «val la pena», fermament.\n\nSempre corrent, sempre en acció,\nsempre amb tres plans dins del cap.\nDes que es desperta fins que es posa al llit,\nel cor bombeja ràpid dins el seu pit.\n\nOh Gemma! L’última dona dins del caos total,\non cada reunió sembla un documental animal.\nArquitecta per pressió, però actriu de veritat,\nmentre nosaltres improvisem… ella té el guió preparat.\n\nOh Gemma! Anfitriona d’aniversaris colossals,\non els dinars podrien semblar bacanals.\nSi veus una costella fent la volta a la piscina,\nsegur que aquell dia… la festa era divina.\n\nLes seves festes eren mites dins del calendari,\nun experiment social amb resultat temerari.\nPiscina, pista de bàsquet, cervesa sense final,\ni un grup d’homes sense fre ni control mental.\n\nAlgú provava de fer un mate amb el banyador com a uniforme,\nmentre algú saltava a l’aigua amb una hamburguesa enorme.\nI quan queia el sol amb llum de vesprada fina,\nla barbacoa sencera navegava a la piscina.\n\nPerò la Gemma només riu\nsense perdre la calma.\nRecull dues cadires…\ni agafa aire sense fer drama.\n\nOh Gemma! L’última dona dins del caos total,\non cada reunió sembla un documental animal.\nArquitecta per pressió, però actriu de veritat,\nmentre nosaltres cridem i bevem sense massa dignitat,\nella manté la calma i ens mira amb tranquil·litat.\n\nOh Gemma! Anfitriona d’aniversaris immortals,\non les decisions sempre són experimentals.\nSi veus una botifarra fent surf sobre el clor,\nvol dir que la Gemma va organitzar el seu cumple sense temor.\n\nVa estudiar arquitectura… perquè tocava estudiar,\nperò el que li crema a dins és viure d’interpretar.\nEntre càstings, assajos i papers petits,\nel somni va creixent a passos decidits.\n\nEncara no és famosa… però el temps ho aclarirà,\nperquè qui corre tant com ella tard o d’hora arribarà.\n\nOh Gemma! L’última dona dins del caos total,\nsupervivent oficial d’aquest zoo gutural.\nCorre per la ciutat amb energia nuclear,\nmentre nosaltres no podem ni caminar.\n\nOh Gemma! Un dia el teu nom brillarà al cartell,\nteatres plens cridant fort sota el mateix estel.\n\nGemma.\nArquitecta.\nActriu.\nOrganitzadora del caos.\nI l’última dona prou valenta\nper seguir fent festes amb nosaltres.`
+  },
+  {
+    title: "Felput",
+    lyrics: `A dalt del Vallès, on el vent fa camí,\nSant Feliu de Codines vigila des d’aquí.\nDiuen que el pendent altera la raó,\nperò allà hi va néixer… un prodigi amb opinió.\n\nMés català que la Moreneta, és un honor,\nporta la senyera cosida al cor.\nEl seu sant patró és en Jordi Pujol,\nque comparteix cognom i certa visió del món.\n\nEntre discursos de pàtria i tradició,\nalça la copa amb gran devoció.\nPerò si l’amor li parla amb passió,\ncanvia al castellà… sense demanar perdó.\n\nPromet dieta cada dilluns al matí,\n«avui sí que començo», proclama des d’aquí.\nPerò arriba el sopar, la promesa es desfà…\nsi hi ha ketchup a taula, la dieta ja marxà.\n\nFelput! Felput! Profeta del Vallès!\nDentista dels amics… que no paguen res!\nFelput! Felput! Senyor del ketchup reial!\nFa dietes cada setmana… amb final desigual!\n\nFelput! Felput! Català universal!\nConservador de manual!\nPerò té un cor tan gran i tan fi\nque els seus «cunyadismes»… acaben fent riure així.\n\nAmb bata blanca i mirada triomfal,\nva obrir la clínica dental.\n«Als amics no se’ls cobra», decret immortal,\ni així — misteri! — es torna milionari igual.\n\nEntre empastes i copes de vi,\nexplica el món tal com hauria de ser aquí.\nRenega d’impostos amb gran convicció,\nperò paga rondes amb molta decisió.\n\nNo és l’home més àgil del món mundial,\nde vegades el terra el saluda frontal.\nPerò s’aixeca, es sacseja amb orgull natural:\n«Caure és humà… aixecar-se és essencial.»\n\nFelput! Felput! Cavaller codinenc!\nAmb ketchup governa l’univers sencer!\nFelput! Felput! Dentista triomfant!\nAmb un cor gegant i un discurs contundent!\n\nFelput! Felput! Heroi paradoxal!\nPosant ortodòncies, i un whisky al final!\n\nI si l’amor li truca al matí…\ndirà «te quiero»… però pensa «visca el país».\n\nFelput! Felput! Llegenda que camina lent,\norgull de codinenc eternament!\nFelput! Felput! Brindem tots per ell!\nQue caigui mil cops… i s’aixequi encara més bell!\n\nI quan el vent torni a bufar pel Vallès,\nalgú dirà rient entre cafès:\n«Potser no és perfecte, potser és exagerat…\nPerò el Felput és història…\nde ketchup i catalanitat.»`
+  },
+  {
+    title: "Fontcu",
+    lyrics: `Caldes té una avinguda amb el seu cognom pintat,\nsenyal que la família fa segles que talla el bacallà.\nLicors, negocis, patrimoni local…\ni un hereu que va sortir bastant especial.\n\nEl Fontcu va néixer amb el futur ben lligat,\ncasa gran, cognom pesant i licor patentat.\nL’avi va crear una ampolla que tot el poble ha provat,\nmentre el nét dibuixava planetes al marge de la societat.\n\nSabia Mercuri, Mart i Venus abans d’aprendre a multiplicar,\ni ja corregia mestres sense cap necessitat.\nEls altres volien coets per sortir volant,\nell només volia explicar per què Saturn gira tant.\n\nPerò els anys passen ràpid i el telescopi va quedar aparcat,\ni el va canviar per la bicicleta... un tema delicat.\nViuen la cadència, els watts i desnivell amb entusiasme brutal…\ni els amics fan com que l’escolten mentre miren el mòbil dissimulant.\n\nHi va haver una època gloriosa a Twitter, universal,\nAfontcu disparant sarcasme amb punteria quirúrgica i verbal.\nPolítics, tertulians, algun diputat de Ciutadans accidental…\ntots tastaven la seva ironia mordaç i digital.\n\nI si el tema és política es posa transcendental,\nindepe empedernit amb discurs sentimental.\n«Puta Espanya», diu tranquil, amb somriure cordial…\nmentre demana un Borgonya que val un sou mensual.\n\nOh Fontcu, geni local,\nde família amb avinguda i patrimoni municipal.\nSi la conversa baixa de nivell cultural…\nell la puja amb un vi car i un discurs sideral.\n\nVa estudiar informàtica, programació digital,\ncompilant algoritmes amb posat professional.\nPerò l’habilitat que domina amb precisió magistral\nés trobar el vi més bo dins del menú setmanal.\n\nOh Fontcu, aristòcrata rural,\nciclista, tuitaire i sommelier ocasional.\nPer amor viu a Barcelona fent vida cultural…\nperò tard o d’hora Caldes el reclamarà.\n\nTornarà amb la bici, la copa i discurs habitual,\nparlant de tanins amb posat transcendental.\nI algú dirà al bar del poble, amb respecte fraternal:\n«Fontcu, calla i paga el vi… que avui et toca, animal.»`
+  },
+  {
+    title: "Dr. Escrigas",
+    lyrics: `Oh Ferran, fill de banquera i granjer, quin duet,\nmodernitat i tradició en un sol paquet.\nEducat, elegant, intel·lecte brillant,\nquan entra a la sala tothom queda callant.\n\nCalb des de jove, però amb cap imponent,\npigment generós i somriure lluent.\nTotes les tietes diuen amb emoció:\n«Aquest noi és un sol… quina educació!»\n\nA l’escola era exemple, llibreta impecable,\nnotes excel·lents i conducta admirable.\nMoltes hores de piscina, disciplina brutal,\nperò nedant, diguem-ho, nivell… discutible total.\n\nFerran Escrigas, llegenda africana,\nmig cervell prodigi, mig alopecia sobrehumana.\nDel bisturí en fa art, amb precisió divina,\ni encara guarda un secret que no és la medicina.\n\nFerran, Ferran, escolta la cançó:\nno tot és talent ni dedicació…\nPerquè la natura, amb generositat,\nli va donar un atribut… de gran profunditat!\n\nPonts i camins va estudiar amb passió,\ncàlculs, estructures i molta equació.\nVa acabar la carrera amb esforç monumental,\nperò va dir: «Aquest no és el meu final.»\n\nI sense fer drama ni perdre el timó,\nes va posar a Medicina amb determinació.\nTreballant i estudiant sense mai descansar,\nen temps rècord la carrera va liquidar.\n\nCirurgia plàstica, mans amb precisió,\nnassos, pòmuls, miracles de reconstrucció.\nI quan explica històries de la seva feina\nper un moment deixem de pensar en la seva eina.\n\nCervell privilegiat, presència elegant,\nun currículum brillant, futur desbordant.\nPerò si preguntes baixet al seu voltant…\nhi ha un detall que sempre acaba sortint:\n\n«No és només el cap el que és singular…\nLa natura amb Ferran… va ser espectacular.»\n\nFerran Escrigas, llegenda africana,\nmig cervell prodigi, mig alopecia sobrehumana.\nDel bisturí en fa art, amb precisió divina,\nperò el mite real… no surt als llibres de medicina.\n\nFerran, Ferran, que sonin els tambors,\nentre tractors, quiròfans i rumors.\nPerquè la vida li ha donat una combinació:\ncap brillant… i equipament de dimensió major!\n\nDoctor Escrigas sempre present,\net donarà un consell en qualsevol moment,\ni encara que tingui la polla més gran del firmament,\nviu la vida sempre humilment.`
+  },
+  {
+    title: "Rodri",
+    lyrics: `El Rodri sembla un notari, seriós i ben plantat,\nperò quan cau la nit… germà, prepara’t pel combat.\nAmb mirada serena i veu calmada\npot fer-te riure de manera exagerada.\n\nNo fuma, diu tranquil, amb posat de sant baró,\nperò et gires d’esquena i et buida el paquet sencer, cabró.\nCalmat com un llac... o això és el que aparenta,\nfins que a la disco algú respira malament i ell el rebenta.\n\nÉs l’home de les dues cares, de la calma i del tro,\nun dia et fa riure… l’altre et fot un cop de puny amb amor.\n\nSi el veus molt fi… desconfia,\nque el desastre ja s’està coent.\nAmb americana i filosofia,\nperò amb l’infern bullint per dins constantment.\n\nI quan diu «avui una copa chill»… ja pots resar,\nque acaba amb algú sense ulleres o sense dignitat.\nEl Rodri no avisa, el Rodri executa,\nés elegància amb ressaca i mala conducta.\n\nCap d’any a Puigcerdà, neu fins dalt,\ni el Rodri en calçotets volent fugir per l’asfalt.\nBaralla èpica, conflicte fraternal,\ni ell dient «me’n vaig!»… en mode bestial.\n\nUna altra nit, ulleres volant i caient a la via,\nperò ell, tranqui, segueix caminant amb alegria.\nI després, sense veure-hi, repartint estopa,\ndos en dos, i després es fot una copa.\n\nI aquella frase mítica, patrimoni de la humanitat:\n«He perdut les claus… però en tinc sis o sis, en realitat».\nLògica rodriana, ciència avançada,\npremi Nobel de borratxera mal calculada.\n\nFa cara de senyor, però és pura dinamita,\nun còctel caríssim amb pólvora infinita.\nEt parla de vins, de cuina i d’art,\ni al cap de deu minuts… algú surt volant del bar.\n\nÉs classe i desastre en proporció exacta,\nun manual viu de conducta abstracta.\nSi tot està en calma, ell ho arregla ràpid:\n«fem uns cubates», argument sòlid.\n\nBilbao tremola, l’univers en tensió,\nel Rodri amb recremor diu «avui no surto, no».\nSilenci sepulcral, apocalipsi emocional,\nsi el Rodri no surt… és el final final.\n\nAlgun problema de salut va ser detectat.\n«És culpa del formatge», deia amb serenitat,\nclar que sí, campió… tot ben justificat.\n\nI encara que ara estigui calmat en aparença,\nporta un animal dins quan la festa comença,\nque surt de tant en tant, sense demanar permís…\ni ens regala un altre capítol de «sis o sis».\n\nAra és empresari i de vegades sent estrès,\nplaques solars primer, constructor després.\nWhisky car, puros, i plats de disseny,\nqui t’ha vist i qui et veu, resulta que tens seny.\n\nCuines de revista, viatges amb nivell,\nperò dins encara viu aquell petit esverat cervell.\nQue de tant en tant surt a passejar,\nl’animal interior que no es vol jubilar.\n\nAixí és el Rodri, sorpresa constant,\nun cop amagat… sempre esperant.\nAmic fidel, caos refinat,\nuna obra d’art mal equilibrat.`
+  },
+  {
+    title: "Solé",
+    lyrics: `Des de Manresa va sortir un heroi tan especial,\namb bata blanca i mirada quasi paternal.\nPer amor va emigrar, història digne de ficció,\nentre Caldes i Santa Eulàlia viu la seva passió.\n\nÉs fisio, és gurú, és científic espiritual,\npsiconeuroimmunòleg amb poder intestinal.\nMira la femta com tarot d’alta precisió:\n«Veig un viatge llarg… però potser et falta coliflor!»\n\nAmb una dieta màgica et farà aprimar,\n(però prepara la cartera abans de començar).\nConsulta premium, diagnòstic celestial,\nsi el futur és caca… ell és l’oracle fecal.\n\nOh Solé, Solé, gurú digestiu total,\nllegeix el teu futur mirant-te la merda, natural.\nFoodie glamurós amb paladar sensacional,\ni un outfit... sempre especial.\n\nDiuen que un dia, en un moment molt peculiar,\nva tenir certa «situació» massa a prop del paladar.\nUn penis a pocs centímetres, escena accidental,\ni el pobre Solé notant reflex salival.\n\nEll deia: «És un reflex mèdic, pura observació»,\nperò la història corre ràpid per tota la població.\n\nPerò si parlem de salivera, siguem sincers,\nel bon menjar també li fa perdre els papers.\nUn restaurant caríssim? Ell ja està reservant,\nmentre la targeta plora discretament tremolant.\n\nOh Solé, Solé, gurú digestiu total,\nllegeix el teu futur mirant-te la merda, natural.\nFoodie glamurós amb paladar sensacional,\ngasta fortunes amb un somriure celestial.\n\nTambé hi va haver un temps… negoci «revolucionari»,\nglutatió miraculós, discurs visionari.\n«És salut cel·lular!», deia amb gran passió,\na senyores de Facebook fent demostració.\n\nPiràmide subtil amb promeses brillants,\ni ell enviant àudios motivacionals constants.\nEntre kombutxa, bròquil i probiòtic artesanal,\nell barreja wellness amb esperit comercial.\n\nDe la femta al glutatió, tot pot ser revelació,\nsi ho vens amb prou glamour i una mica de convicció.\nPotser el futur és incert per a la humanitat…\nperò el Solé el monetitza amb total seguretat.\n\nOh Solé, Solé, profeta intestinal,\nde Manresa al Vallès en viatge transcendental.\nSi el destí s’amaga al sistema digestiu,\nell el llegirà… amb glamour exclusiu.\n\nAixí que si el futur et sembla massa fosc avui,\nporta-li una mostra… i ell ja t’ho tradueix fluid.`
+  },
+  {
+    title: "Mauri",
+    lyrics: `Ell diu: «Em dic Adrià.»\nPerò el món diu:\n«No t’enganyis…\ntu ets el Mauri.»\n\nRos amb ulls blaus, cara de sant,\nperò de petit ja apuntava a trapella elegant.\nAl Taller d’Art li donaven fang i paper,\ni ell pensava: «allò ho puc destruir si ho llenço bé».\n\nLa Dolors cridava: «Ni, ni, ni, Adrià, porta’t bé!»,\nmentre ell estudiava com fer-la enfadar també.\nÚnic alumne expulsat en tota la institució,\nles professores deien que era una mala influència,\ni no era una insinuació.\n\nConstruir… destruir…\naixò és el seu destí.\nEl karma va ser espectacular:\nara és arquitecte, ves per on havia d’anar.\n\nMauri, Mauri, terror de la bachata,\nbíceps d’en Popeye, cadena de plata.\nEll diu digueu-me «Adrià», però això ja està perdut,\ntot el barri crida: «Mauri, salut!»\n\nPrimer es va fer runner perseguint la joventut,\nara al gym aixecant ferro com un mamut.\n«No és crisi», diu amb serenor…\nperò la cadena al coll brilla més que la claror.\n\nPrimer van ser flexions fins acabar cansat,\ncom Rocky preparant el combat.\nDesprés el gym, mirall i suor,\ni ara té bíceps amb categoria de monument major.\n\nDesprés bachata, girant pel local,\nés el Romeo Santos del Vallès central.\n«Mai se sap», diu amb posat seductor…\nper si la pista demana un latin lover amb fervor.\n\nCamisa oberta, cadena platejada,\narracada brillant, actitud estudiada.\nLook mafiós de club dubtós,\ncom si cobrés deutes amb un tren superior poderós.\n\nMauri, Mauri, ballarí tropical,\nbíceps inflats i mirada fatal.\nEntre passos sensuals i posat provocador,\nse sent protagonista d’un drama d’amor.\n\nArquitecte al matí, gym a la tarda,\nselfie al mirall comprovant la jugada.\n«No és crisi dels quaranta», diu molt seriós…\nmentre es tatua una serp a l’esquena, orgullós.\n\nAdéu croissants… batalla moral,\nla Voll Damm plora darrere el taulell del bar.\nAra beu «Coronita» que engreixa poquet,\nperdre greix i guanyar múscul és el seu secret.\n\nPerò sota el look de macarra seductor\ni aquell posat mig provocador…\nhi ha el mateix amic de sempre,\ndels que apareixen quan el món es torna pitjor.\n\nMauri, Mauri, arquitecte diligent,\nconstructor d’edificis, destructor recurrent.\nMig latin lover, gymbro brutal,\nexperimentant amb la joventut residual.\n\nEll diu digueu-me Adrià… però ningú li farà cas,\nel nom Mauri ja té massa pes.\nEntre bíceps, bachata i tatuatge real…\nsegueix sent el Mauri original.`
+  },
+  {
+    title: "Aleix",
+    lyrics: `Yeah, yeah, Aleix Cor,\nmascle tranquil, fidel, però sempre amb estil,\nprepara’t, Chico de Gafas, perquè comença la teva melodia.\n\nL’Aleix va néixer entre consulta i sala d’espera,\nfill d’un ginecòleg expert i d’una pacient que li encenia la foguera.\nMirada clara, tranquil·litat natural,\nd’aquell tipus de persona que sembla sempre formal.\n\nVa estudiar biologia, però sense gaire entusiasme,\nés un fals biòleg, no recorda ni un esquema.\nTreballa una mica, sense gaire estrèss,\nfa la seva feina i després ja veurem què més.\n\nEntre piscina i gimnàs i sèries passa la tarda sencera,\namb disciplina moderada però constància sincera.\nNo beu gaire, ni fuma, tampoc busca festa gran,\nla nit li passa lenta i el son no arriba en cap instant.\n\nPotser un porret l’ajudaria a descansar,\nperò ell prefereix mirar el sostre i tornar-ho a intentar.\n\n«Chico de Gafas», sense llopes hi veu fatal,\n«Chico de Gafas», mirada calmada i posat normal,\n«Chico de Gafas», rutina de gimnàs i piscina,\n«Chico de Gafas», dorm poc però manté la disciplina.\n\nEncara viu amb els pares amb tota tranquil·litat,\nperò ja pensa en la casa que tindrà en propietat.\nEls plànols ja existeixen, el terreny està mirat,\nnomés falta construir i fer el trasllat.\n\nEl temps passa i l’Aleix es va fent gran,\nentre hipoteques futures i entrenaments constants.\nNeda unes piscines amb estil relaxat,\ndesprés torna a casa poc cansat.\n\nAleix Cor, opinador professional,\nde sofà, de fòrum i debat digital.\nSi una idea sona massa de cunyat,\nper ell és simplement sentit comú ben pensat.\n\nEconomia, política, mercat liberal,\ntot s’explica ràpid amb un fil virtual.\nEntre memes i comentaris amb to contundent,\nForocoches és pràcticament el seu parlament.\n\nI quan descansa del debat digital,\nrejuga el Final Fantasy amb amor total.\n\n«Chico de Gafas», sense llopes hi veu fatal,\n«Chico de Gafas», mirada calmada i posat normal,\n«Chico de Gafas», rutina de gimnàs i piscina,\n«Chico de Gafas», dorm poc però manté la disciplina.\n\nQuan ningú parlava de criptos al mercat global,\nl’Aleix ja comprava Bitcoin amb mirada racional.\nTothom reia dient que era moda temporal,\nara ell somriu tranquil mirant el gràfic mensual.\n\n«Chico de Gafas», sense llopes hi veu fatal,\n«Chico de Gafas», mirada calmada i posat normal,\n«Chico de Gafas», rutina de gimnàs i piscina,\n«Chico de Gafas», dorm poc però manté la disciplina.\n\nTranquil, constant, i amb moltes opinions…\nl’Aleix continua la seva rutina.\nEntre Forocoches, piscina i poc dormir…\nel koketo es forja el seu destí.`
+  },
+  {
+    title: "Joan",
+    lyrics: `De Sentmenat surt el Joan amb aroma de clor,\npatada de braça que encara surt als llibres d’honor.\nDeien «quina bèstia!», quan saltava a nedar,\nara salta menys… però no ho deixa d’intentar.\n\nResponsable de dia, amb mirada formal,\nperò amb dues copes es torna poeta universal.\n\nOh Joan, amant del cubata i el clor,\nsi vas borratxo abraces a tothom proclamant el teu amor.\n«Tio, t’estimo molt!», amb llàgrima inclosa,\ni l’endemà silenci… com si res, no fos cosa!\n\nVa penjar el banyador… però no del tot,\nperquè el waterpolo el va treure del sot.\nPorter heroic contra joves titans,\nque li diuen «senyor»… mentre li marquen gols com pans.\n\nEll diu «tinc experiència, això és mentalitat»,\nmentre li passen cinc boles… amb facilitat.\n\nOh Joan, guardià del passat gloriós,\namb reflexos discutibles però esperit poderós.\n«Tio, t’estimo molt!», ho repeteix emocionat,\nmentre un nen de quinze li clava un gol pel costat!\n\nAl vestidor explica batalletes del passat,\nque si records, que si gestes… tot una mica inflat.\nNingú sap si és veritat o pura ficció,\nperò ell ho diu tan seriós… que compres la versió.\n\nI a casa… un regne de closques i lentitud,\ntortugues que creixen amb discutible estat de salut.\nCada setmana més, ningú sap per què,\nperò el Joan somriu… i diu «tot està bé».\n\n«És una afició sana», diu sense dubtar,\nperò el barri murmura… «aquí hi ha tema rar…»\n\nI a la dutxa del club hi ha llegendes corrent,\nhistòries que circulen de manera sorprenent:\nque si la braça era tècnica… o potser no tant,\nque hi havia «un altre factor» que ajudava bastant.\n\nNo era només força, ni tampoc entrenament,\nhi havia alguna cosa entre les cames… força evident.\n\nOh Joan, llegenda viva del poble i la piscina,\nentre discursos etílics i fauna clandestina.\n«Tio, t’estimo molt!», crida amb passió,\nmentre una tortuga el mira… sense cap emoció.`
+  },
+  {
+    title: "Ramu",
+    lyrics: `A la vila corre el rumor, ningú ho pot negar,\nsi sona la cascada… el Ramu torna a vomitar.\nCara de sant, calma d’ermità,\nperò posa-li cubates… i tot pot esclatar.\n\nEl Ramu és aquell tipus que voldries de veí,\nhonest, mirada noble, pausa tranquil·la pel camí.\nConviccions de pedra, serenor natural,\nsembla un monjo zen en calma total.\n\nPerò alerta, company, que hi ha un petit detall,\nquan el ron cola gola avall es desboca el cavall.\nLa calma es dissol com sucre dins del got,\ni el nord se’n va de festa mentre el sud pren el control.\n\nEls cubates li deslliguen l’esperit animal,\nla mirada se li torç, i perd la calma vital.\nNo és mal tio, però el ron fa miracles,\ni pot fer-lo discutir amb fanals i amb obstacles.\n\nPerò el pitjor no és la nit, ni el drama del bar,\nés l’endemà al matí quan el sol vol saludar.\n\nSi un diumenge sents crits que fan tremolar la terra,\ntan forts que l’esperit més valent s’aterra,\ni una cascada brutal ressona pel portal…\nTranquil, no passa res — és el Ramu digestant.\n\nRessaca llegendària, regurgitació il·legal,\nla vila ja ho sap: és un fenomen natural.\nQuan surt el sol i el món sembla normal…\nel Ramu combat el seu apocalipsi estomacal.\n\nPerò no tot és cubata dins del seu historial,\ntambé és mestre cerveser, nivell artesanal.\nAmb «Els Amics de la Cervesa», quina connexió!\nLlúpol, malta i amistat dins d’una fermentació.\n\nI quan no beu ni produeix la birra sagrada,\nel cervell li fa trampes amb manca de salut imaginada.\nHipocondríac de raça, doctorat en paranoia,\nun copet al cap i ja prepara la necrològica.\n\nUna taca a la pell? Lepra segurament.\nUn esternut sospitós? Funeral imminent.\nGoogle mèdic o drama existencial,\nel Ramu sempre veu el final a l’hospital.\n\nSi un diumenge sents crits que fan tremolar la terra,\ntan forts que l’esperit més valent s’aterra,\ni una cascada brutal ressona pel portal…\nTranquil, no passa res — és el Ramu digestant.\n\nRessaca llegendària, regurgitació il·legal,\nla vila ja ho sap: és un fenomen natural.\nQuan surt el sol i el món sembla normal…\nel Ramu combat el seu apocalipsi estomacal.\n\nDe petit era devot, missa i religió,\ncomunió impecable, confirmació amb emoció.\nFeia cara d’angelet sota el vitrall sagrat,\ncom si el cel li tingués el futur reservat.\n\nPerò alguna cosa un dia devia fer clic,\npotser massa missa o massa vi antic.\nPerquè quan tocava boda, moment celestial…\nva esquivar l’església amb un regat magistral.\n\nPotser Déu el mira i diu amb ironia:\n«Fill meu, menys cubates i més aigua beneïda.»\n\nSi un diumenge sents crits que fan tremolar la terra,\ntan forts que l’esperit més valent s’aterra,\ni una cascada brutal ressona pel portal…\nTranquil, no passa res — és el Ramu digestant.\n\nRessaca llegendària, regurgitació il·legal,\nla vila ja ho sap: és un fenomen natural.\nQuan surt el sol i el món sembla normal…\nel Ramu combat el seu apocalipsi estomacal.\n\nAixí és el Ramu, mite de la població:\nmig sant, mig tempesta, amb cervesa en fermentació.\nSi el veus tranquil, no baixis la guàrdia del tot…\npotser ja està pensant quin serà el pròxim got.`
+  },
+  {
+    title: "Carles",
+    lyrics: `Hey!\nYeah!\nSempre creu que té raó!\n\nEn Carles entra i ja hi som tots:\nsempre opina diferent, però no el pots fer callar.\nSi dius «sí», ell diu «ni parlar»,\nsi dius «no», ell diu «doncs clar!».\n\nCamisa fina, Red Bull a la mà,\nestil nou ric, esperit gamberro llunyà.\nDiscutint amb mig bar ple\nperò convidant la ronda després.\n\nI quan la copa li puja al cervell\nes posa a cantar «Small Things», aquell vell himne d’ell,\nmig desafinat, drama total,\ncom si fos el cantant principal.\n\nContra corrent és la seva fe,\nsi tothom baixa ell puja també.\nSi el món diu nord amb convicció,\nell respon: «segur que és sud, collons».\n\nOh Carles, quin fenomen,\npunk ric, sense control.\nDel garatge ple de soroll\nals bitcoins i al rock’n’roll.\n\nOh Carles, tots ho sabem,\nets més tendre del que admetem.\nMolts crits, molt posat fatal,\nperò un cor pur monumental.\n\nEn un local brut i petit\nva muntar un grup mig maleït.\n«Cuchillo de Palo» cridava fort,\nell a la bateria marcant el nord.\n\nLíder espiritual, bateria immortal,\ndiscutia fins amb el vocal.\nTres concerts, quatre baralles,\ncinc cerveses i zero medalles.\n\nNits d’estiu a Eivissa, tardes a Formentera,\nmassa eufòria, mala jugada sencera.\nVa dir «condueix tu, crack total»,\nerror logístic, fatal.\n\nLa moto va volar, el destí fa riure,\nles cames plenes de souvenirs.\nCicatrius profundes estil radical,\nrecord etern del pla genial.\n\nOh Carles, quin animal,\nnen ric amb instint tribal.\nDel garatge ple de cables\nals criptogràfics inevitables.\n\nOh Carles, tots ho sabem,\nfas veure que ets dur com el gel,\nperò sota el posat malcarat\nhi ha un osset punk despistat.\n\nPrimer un Audi… vermell cridaner,\nrollo canallita però amb poder.\nDesprés Porsche, molt elegant,\ncom un empresari important.\n\nAra parla de criptos i final del sistema,\ngràfiques obertes com si fossin un poema.\n«Bro, això pujarà segur»,\nmentre calcula el seu valor futur.\n\nUna mica paranoic? Potser sí.\nUna mica tossut? Clar que sí.\nPerò amb tres birres i un ampli vell\ntorna el punky adolescent d’ell.\n\nHey!\nRecordes els amplis rebentats?\nEls somnis bruts i bars tancats?\nDeies: «Bro, l’estil no es negocia!»\nperò les criptomonedes ja et semblaven fantasia.\n\nOh Carles, quin animal,\nnen ric amb instint tribal.\nEntre motors i mercats digitals\nencara batega el punk original.\n\nOh Carles, tots ho sabem,\nencara que rondinis també,\ndarrere el posat malcarat\nhi ha el mateix boig del local.\n\nSempre discutint, sempre genial,\nun punk amb pasta, total.\n\nI si el món s’acaba demà,\nen Carles segur que ho havia dit ja.`
+  },
+  {
+    title: "Romà",
+    lyrics: `Tranquil a la seva cova digital…\nProcrastinant... sempre igual.\n\nA l’aula predica en codi binari.\nSer professor amb plaça fixa, en el seu imaginari.\nNo vol mirades, perfil secundari,\nperò acaba sent protagonista del grup necessari.\n\nScroll infinit, realitat difusa,\nlate night gaming amb mirada confusa,\nboss final? Masoquisme pur,\nmorint vint cops… o més, segur.\n\nNo li agrada ser el centre d’atenció,\nperò si hi ha dies que lidera la funció.\n\nOH ROMÀ! SENYOR DEL GLUTAMAT!\nRei del ramen i del peu inflat!\nOH XAMÀ! DELS BOLETS I L’ATZAR!\nVoles alt si la gota no et deixa caminar.\n\nUdon en flames, alquímia oriental,\npluja de glutamat en quantitat industrial,\ncada plat que toca es torna especial,\numami dens, gairebé antinatural.\n\nSommelier d’enciam, respecte internacional.\nDiu: «Cruixent perfecte, matís vegetal,\nnotes de bosc humit i final mineral».\nLa resta del plat li és absolutament igual.\n\nTot estava bé, ell estava tranquil,\nfins que el peu avisa de manera poc subtil.\n\nOH ROMÀ! SENYOR DEL GLUTAMAT!\nProfeta del sabor exagerat!\nOH XAMÀ! DEL VIATGE ELEVAT!\nQuan la gota ataca… ell ja ha volat!\n\nBolets! Pastissos de Maria! Dimensions que es trenquen!\n«eme-de-eme-a» i les parets es dobleguen!\nExperimenta sol… o amb el seu clan,\ndoctor honoris causa del trip més gran!\n\nMóns paral·lels dins del seu sofà,\nmentre el peu diu «no» — la ment diu «VA!»,\nconeixements dignes d’un farmacèutic expert,\nel Romà ascendeix, amb els ulls tancats i cor obert.\n\nGLUTAMAT! GLUTAMAT!\nMés sabor que la realitat!\nGOTA! GOTA! Peu inflat!\nPerò la ment… en viatge astral!\n\nOH ROMÀ! SENYOR DEL GLUTAMAT!\nEntre codi i trips ha evolucionat!\nOH XAMÀ! DELS REGNES ALTERATS!\nHeroi discret… de viatges desajustats.\n\nNo vol ser protagonista… però ho és igual…\nRomà… llegenda accidental.`
+  },
+  {
+    title: "Roger",
+    lyrics: `De petit volia ser faraó,\nestudiava jeroglífics amb devoció,\nara és el líder de la natació,\nque és com ser faraó però amb més pressió.\n\nTé la força a la mà esquerra\ni el cor sempre li va a la guerra,\nés comunista de tota la vida,\nl’esquerra és el seu nord, no canvia de partida.\n\nQuatre cafès a les venes,\nlliurant el poble de les cadenes,\nés el cuc que va conquerir el món amb les seves potes.\nEl faraó de Caldes!\n\nDarrere dels plats es feia escoltar,\nEl Cuc amb Potes et faria ballar,\namb el Roger la cabina està en flames,\nel cuc amb potes et fa moure les cames.\n\nCinc cafès diaris són la seva religió,\nli tremolen les mans, diu que és l’emoció,\nles angines ja formen part de la tradició,\nperò amb cafè i un purret lidera la revolució.\n\nTé la força a la mà esquerra\ni el cor sempre li va a la guerra,\nés comunista de tota la vida,\nl’esquerra és el seu nord, no canvia de partida.\n\nQuatre cafès a les venes,\nlliurant el poble de les cadenes,\nés el cuc que va conquerir el món amb les seves potes.\nEl faraó de Caldes!\n\nQui havia de dir que el DJ de l’Ateneu\nacabaria sent el líder de les piscines,\nde punxadiscs a president, és a tot arreu,\nnomés s’atura per fer uns FIFAs.\n\nTot cap a l’esquerra, sempre endavant,\nel Roger és així, autèntic i constant.\n\nQuatre cafès a les venes,\nlliurant Caldes de les cadenes,\nés el cuc que va conquerir el món amb les seves potes.\nEl faraó de Caldes!\n\nEl faraó de Caldes!\nEl faraó de Caldes!\nEl faraó de Caldes!`
+  },
+  {
+    title: "Lluís",
+    lyrics: `PU-TA ES-PA-NYA!!!\nOI, OI, OI, OI!!!\n\nCara de trapella, mirada absent,\nperò a dins el cap hi havia moviment.\nEl profe es girava — instant precís,\nobjecte volant, signatura: ...Lluís.\n\nNo era caos, era decisió,\npetit sabotatge per diversió.\nTornava al lloc, perfil discret,\ncom si no hagués passat res de res.\n\nXuletes fines, nivell quirúrgic,\ncap error, sistema empíric.\nNo era sort, era control,\nfred com el gel, zero tremolor.\n\nNo trencava coses per cridar l’atenció,\nera destructiu per necessitat, per passió.\nImpuls — acció — després silenci,\nel Lluís no pregunta, directament atempta.\n\nSi tot està quiet, ell ho rebenta,\nsi hi ha una línia, ell la travessa.\nNo és postureig el que marca el seu camí,\nés que té el cable tan pelat que fa patí.\n\nEls anys passen, al seu cap no tant,\nmateix software, ara amb cos mutant.\nGym, ferro, múscul guanyat,\nara té més poder, el seu cos ha despertat.\n\nEl que abans era un joc petit,\nara és impacte, soroll i crit.\nMateix impuls, més potència,\nmateixa idea, més conseqüència.\n\nQuan hi ha festa, ell és foc,\nsent el hardcore i el monstre entra en joc.\nAlcohol dins, fora el descontrol,\nl’escena gira al seu voltant inclús estant sol.\n\nHi ha un moment — sempre arriba igual,\namb el got a la mà, collons fora, somriure brutal.\nSense subtileses, suca polla i ous amb instint animal,\nritual brut que ningú entén, però ja ha passat a ser normal.\n\nEls altres riuen fort, però miren de reüll,\nmiren l’escena, s’agenollen i beuen amb orgull.\nSaben que és seu, que és marca registrada,\nuna línia creuada que queda gravada.\n\nNo és tradició ni casualitat,\nés portar el límit a territori sagrat.\n\nImpuls — acció — després silenci,\nmai demana cap permís ni clemència.\nSi hi ha límit, el vol provar,\ni si aguanta… el torna a trencar.\n\nIncòmode, brut, directe i clar,\nno el controles, només l’has de mirar.\n\nI un dia baixa la intensitat,\nno per canvi — per necessitat.\nTrenta-cinc, fre parcial,\nmenys destrucció, més discurs social.\n\nEl got segueix, però ja no és igual,\nel ritual cau… o queda ocasional.\nParla de coses que abans li eren igual,\n«comunicació», «emocions» en to quasi formal.\n\nAra porta verdura, la posa al foc,\nsembla normal… però la bèstia segueix en joc.\n\nPer dins no ha marxat,\nnomés s’ha assegut.\nObserva, espera,\nsap quan surt.\n\nImpuls — acció — ara amb fre,\nel Lluís calcula una mica més.\nNo ha canviat, s’ha adaptat,\nmateix problema, més ben disfressat.\n\nSi ensuma popper i el cap li gira,\ntorna el de sempre — ningú respira.\nNo és evolució, és gestió.\nEl mateix caos amb millor control.`
+  },
+  {
+    title: "Badia",
+    lyrics: `Ferran als plats!\nFuckin’ Badia in the mix!!\n\nFerran Badia, tècnic de so de professió,\namb cables en lloc de neurones com a connexió.\nDJ, cuiner, crític musical,\nsi parla de temazos… prepara’t pel sermó.\n\nLa seva dieta és clara, no hi ha debat:\npasta, lasanya, carn — menú sagrat.\nSap que menjar fruita i verdura és necessari,\nperò ell les esquiva com un ninja culinari.\n\nDiu que és un «trauma infantil», amb dramatisme elegant,\nperò tothom sap que és una excusa poc brillant.\nCarbonara, guanciale, parmesà per tot arreu,\nsi hi ha carn a la taula… qualsevol problema és lleu.\n\nI quan apareix un altaveu…\ntots sabem què passa després.\n\nBadia al bass, pujant revolucions,\ndrum and bass al ritme de les seves pulsacions.\nGravity DJs encenent la ciutat,\nmentre el Ferran controla la velocitat.\n\nBadia al control, groove accelerat,\nsi hi ha una festa… el DJ ja està preparat.\n\nLa gent diu «posa alguna cosa comercial»…\nperò ell respon: «no em mengis l’orella, subnormal!».\n\nAmb Gravity DJs van començar jugant,\ndos plats, mil idees i un públic ballant.\nDe vegades tot flueix com l’aigua pel riu…\ni de vegades el Ferran entra en mode impulsiu.\n\nPunxa aquell tema que només ell coneix,\nla pista dubta… però el bombo creix.\nEll tanca els ulls, total concentració,\ni de sobte se’n penedeix de la seva decisió.\n\nI a qualsevol festa passa exactament igual:\nalgú porta música… error monumental.\nPerquè el Ferran detecta l’altaveu, ja te’l té localitzat,\ni en tres segons ja te’l ha segrestat.\n\nQuan ell punxa no és només posar so,\nés una missió, quasi religió.\nUn beat rere l’altre, sense mirar enrere,\ncom un tren de bass travessant la nit sencera.\n\nPerò soto el DJ hi ha un cor gegant,\nmés profund que qualsevol sub vibrant.\nSi està content és festa sense final,\nriures i beats en espiral.\n\nPerò si el món li gira del revés un moment,\nprepara’t… perquè parlarà llargument.\nIdees, emocions, veritats sense disfressa,\ncom basslines profundes que et travessen sense pressa.\n\nI encara que el dia li jugui en contra,\nsi el necessites ell sempre es presenta.\nAmb música, amb temps, amb sinceritat,\nBadia és dels que mai t’ha fallat.\n\nBadia al bass, ritme accelerat,\ndrum and bass corrent com un animal desbocat.\nGravity DJs fent tremolar el local,\namb el Ferran fent de director principal.\n\nBadia al control, història de música real.\nDJ, cuiner i crític musical.\n\nI recorda la regla universal:\nsi el Ferran arriba… la música és seva, natural.\n\nPasta al plat.\nBass al cap.\nAltaveu a prop…\nBadia al control.`
+  }
+];
+
+const tracklist = document.getElementById('tracklist');
+
+songs.forEach((song, i) => {
+  const track = document.createElement('div');
+  track.className = 'track';
+  track.innerHTML = `
+    <div class="track-header" role="button" tabindex="0" aria-expanded="false" onclick="toggle(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle(this)}">
+      <span class="track-number">${String(i + 1).padStart(2, '0')}</span>
+      <span class="track-title">${song.title}</span>
+      <span class="track-arrow" aria-hidden="true">▼</span>
+    </div>
+    <div class="lyrics">
+      <p>${song.lyrics}</p>
+    </div>
+  `;
+  tracklist.appendChild(track);
+});
+
+function toggle(header) {
+  const lyrics = header.nextElementSibling;
+  const isOpen = lyrics.classList.contains('open');
+
+  if (isOpen) {
+    const track = header.parentElement;
+    lyrics.classList.remove('open');
+    header.classList.remove('active');
+    header.setAttribute('aria-expanded', 'false');
+    window.scrollTo(0, track.offsetTop);
+    return;
+  }
+
+  document.querySelectorAll('.lyrics.open').forEach(el => {
+    el.classList.remove('open');
+    const h = el.previousElementSibling;
+    h.classList.remove('active');
+    h.setAttribute('aria-expanded', 'false');
+  });
+
+  lyrics.classList.add('open');
+  header.classList.add('active');
+  header.setAttribute('aria-expanded', 'true');
+  header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
 </html>
